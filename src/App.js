@@ -1,10 +1,11 @@
 import React from "react";
 import "./App.css";
+import Result from "./components/SearchBar";
 
 function App() {
   return (
     <div className="App">
-      <h1>Salom</h1>
+      <Result/>
     </div>
   );
 }
