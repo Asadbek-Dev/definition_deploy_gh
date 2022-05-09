@@ -35,7 +35,7 @@ function SearchBar({ placeholder}) {
     var newFilter = words.filter((value) => {
       return value.word_eng.toLowerCase().includes(searchWord.toLowerCase());
     })} else if(option==='uz'){
-      var newFilter = words.filter((value) => {
+       newFilter = words.filter((value) => {
         return value.word_uz.toLowerCase().includes(searchWord.toLowerCase());
       })
     }
@@ -88,7 +88,7 @@ function SearchBar({ placeholder}) {
         <Select className="select" options={options1} defaultValue={{ value: 'eng', label: <Flags.US title="United States" className="flag"/> }} onChange={value =>handleChange1(value)} />
       </div>
       
-      {filteredData.length != 0 && (
+      {filteredData.length !== 0 && (
         <div className="dataResult">
           {filteredData.slice(0, 15).map((value, key) => {
             return (
@@ -99,7 +99,7 @@ function SearchBar({ placeholder}) {
           })}
         </div>
       )}
-      {selected.length!=0 &&  <Result selected={selected} option={option} option1={option1}/>}
+      {selected.length!==0 &&  <Result selected={selected} option={option} option1={option1}/>}
      
     </div>
   );
