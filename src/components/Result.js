@@ -3,7 +3,7 @@ import React from 'react'
 const Result = () => {
   return (
         <>
-        <h1>Result</h1>
+        <h1>Hudo hohlasa</h1>
         {/* {option==='eng' && option1==='uz' ?<div className="result">
           <h3 className="result_word">{selected.word_eng}</h3>
           <p className="result_definition">{selected.definition_uz}</p>
