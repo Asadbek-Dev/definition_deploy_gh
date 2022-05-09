@@ -1,11 +1,10 @@
 import React from "react";
 import "./App.css";
-import SearchBar from "./components/SearchBar";
 
 function App() {
   return (
     <div className="App">
-      <SearchBar placeholder="Search a word..."/>
+      <h1>Salom</h1>
     </div>
   );
 }
