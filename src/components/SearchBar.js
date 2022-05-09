@@ -92,7 +92,7 @@ function SearchBar({ placeholder}) {
         <div className="dataResult">
           {filteredData.slice(0, 15).map((value, key) => {
             return (
-              <a className="dataItem" onClick={()=>handleSelected(value)} >
+              <a className="dataItem" key={key} onClick={()=>handleSelected(value)} >
                 {option==='eng'?<p >{value.word_eng} </p>:<p >{value.word_uz} </p>}
               </a>
             );
