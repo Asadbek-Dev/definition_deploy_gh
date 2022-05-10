@@ -49,7 +49,7 @@ function SearchBar({ placeholder}) {
 
   function handleSelected(value){
     setSelected(value)
-    setWordEntered("")
+    {option==='eng'?setWordEntered(value.word_eng):setWordEntered(value.word_uz)}
   }
 
   const clearInput = () => {
@@ -88,7 +88,7 @@ function SearchBar({ placeholder}) {
         <Select className="select" options={options1} defaultValue={{ value: 'eng', label: <Flags.US title="United States" className="flag"/> }} onChange={value =>handleChange1(value)} />
       </div>
       
-      {filteredData.length !== 0 && (
+      {filteredData.length !== 0 &&  (
         <div className="dataResult">
           {filteredData.slice(0, 15).map((value, key) => {
             return (
