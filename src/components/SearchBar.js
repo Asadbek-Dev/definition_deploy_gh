@@ -14,6 +14,7 @@ function SearchBar({ placeholder}) {
     const [selected, setSelected] = useState([]);
     const [option, setOption] = useState('eng');
     const [option1, setOption1] = useState('eng');
+    const [classname, setClassname] = useState(true);
 
     useEffect(() => {   
           setWords(data);
@@ -29,6 +30,7 @@ function SearchBar({ placeholder}) {
       ]
     
     const handleFilter = (event) => {
+        setClassname(true)
     const searchWord = event.target.value;
     setWordEntered(searchWord);
     if(option==='eng'){
@@ -41,6 +43,7 @@ function SearchBar({ placeholder}) {
     }
 
     if (searchWord === "") {
+        setSelected('')
       setFilteredData([]);
     } else {
       setFilteredData(newFilter);
@@ -48,6 +51,7 @@ function SearchBar({ placeholder}) {
   };
 
   function handleSelected(value){
+    setClassname(false)
     setSelected(value)
     {option==='eng'?setWordEntered(value.word_eng):setWordEntered(value.word_uz)}
   }
@@ -56,6 +60,7 @@ function SearchBar({ placeholder}) {
     setFilteredData([]);
     setWordEntered("");
     setSelected('')
+
   };
 
   const handleChange=(value)=>{
@@ -89,7 +94,7 @@ function SearchBar({ placeholder}) {
       </div>
       
       {filteredData.length !== 0 &&  (
-        <div className="dataResult">
+        <div className={classname?"dataResult":'unvisible'}>
           {filteredData.slice(0, 15).map((value, key) => {
             return (
               <a className="dataItem" href="# " key={key} onClick={()=>handleSelected(value)} >
