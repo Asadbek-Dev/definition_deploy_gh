@@ -70,6 +70,15 @@ function SearchBar({ placeholder}) {
 
   const handleChange=(value)=>{
       setOption(value.value)
+      if(value.value=='uz'){
+        setFilteredData([]);
+        setWordEntered("");
+        setSelected('')    
+      } else{
+        setFilteredData([]);
+        setWordEntered("");
+        setSelected('')    
+      }
   }
   const handleChange1=(value)=>{
       setOption1(value.value)
