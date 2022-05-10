@@ -51,9 +51,14 @@ function SearchBar({ placeholder}) {
   };
 
   function handleSelected(value){
+    // {option==='eng' ? setWordEntered(value.word_eng): setWordEntered(value.word_uz)}
+    if(option==='eng'){
+        setWordEntered(value.word_eng)
+    } else {
+        setWordEntered(value.word_uz)
+    }
     setClassname(false)
     setSelected(value)
-    {option==='eng'?setWordEntered(value.word_eng):setWordEntered(value.word_uz)}
   }
 
   const clearInput = () => {
